@@ -5,17 +5,17 @@ const Card = () => {
   const weather = useWeather();
   console.log(weather);
   return (
-    <div className='w-[90%] m-auto flex gap-3'>
-      <div className=" flex flex-col justify-center items-center bg-white/20 rounded-xl w-150 p-6 text-4xl text-white gap-3 h-110">
+    <div className='w-[90%] m-auto flex gap-3 max-[880px]:flex-col'>
+      <div className=" flex flex-col justify-center items-center bg-white/20 rounded-xl w-[60%] p-6 text-4xl text-white gap-3 h-110 max-[880px]:m-auto max-[880px]:w-[90%]">
         <img src={weather?.data?.current?.condition?.icon} className='w-25'/>
-        <h3>{weather?.data?.current?.condition?.text}</h3>
-        <h3 className='text-8xl'>{weather?.data?.current?.temp_c} &deg;C</h3>
+        <h3 className='text-3xl max-[600px]:text-3xl'>{weather?.data?.current?.condition?.text}</h3>
+        <h3 className='text-8xl max-[600px]:text-7xl'>{weather?.data?.current?.temp_c} &deg;C</h3>
         <h3 className='text-lg'>Feels like {weather?.data?.current?.feelslike_c} &deg;C</h3>
-        <h5 className='text-5xl'>{weather?.data?.location?.name}</h5>
+        <h5 className='text-5xl max-[600px]:text-3xl'>{weather?.data?.location?.name}</h5>
         
       </div>
-      <div className='flex flex-col gap-3'>
-        <div className=" flex flex-col justify-between p-3 items-center bg-white/20 rounded-xl w-70 text-4xl text-white h-33">
+      <div className='flex flex-col w-[40%] gap-3 justify-between max-[880px]:flex-row max-[880px]:flex-wrap max-[880px]:w-[90%] max-[880px]:m-auto'>
+        <div className=" flex flex-col justify-between p-3 items-center bg-white/20 rounded-xl w-[100%] text-4xl text-white h-33">
           <div>
             <h3 className='text-sm'>Wind Speed</h3>
           </div>
@@ -27,7 +27,7 @@ const Card = () => {
 
 
 
-        <div className=" flex flex-col justify-between p-3 items-center bg-white/20 rounded-xl w-70 text-4xl text-white h-33">
+        <div className=" flex flex-col justify-between p-3 items-center bg-white/20 rounded-xl w-[100%] text-4xl text-white h-33">
           <div>
             <h3 className='text-sm'>Humidity</h3>
           </div>
@@ -39,7 +39,7 @@ const Card = () => {
 
 
 
-        <div className=" flex flex-col justify-between p-3 items-center bg-white/20 rounded-xl w-70 text-4xl text-white h-38">
+        <div className=" flex flex-col justify-between p-3 items-center bg-white/20 rounded-xl w-[100%] text-4xl text-white h-38">
           <div>
             <h3 className='text-sm'>Location</h3>
           </div>
