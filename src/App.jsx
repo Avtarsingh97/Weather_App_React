@@ -7,16 +7,16 @@ import {useWeather} from './Context/Weather'
  
 function App() {
   const weather = useWeather();
-
+  console.log(weather);
   useEffect(()=>{
     weather.fetchCurrentUserLocation();
   },[]);
 
   return (
-    <div className="app">
-      <h1>Weather Forecast App</h1>
-      <Input/>
-      <Button onClick={weather.fetchData} value="Search"/>
+    <div className="app font-body">
+      <h1 className='text-5xl font-bold p-6 text-white'>Weather Forecast App</h1>
+      <Input className="border-1 rounded-xl px-2 py-2 w-96 text-lg m-2 text-white"/>
+      <Button onClick={weather.fetchData} value="Search" disabled={!weather.searchCity.trim()} />
       <Card/>
       
     </div>

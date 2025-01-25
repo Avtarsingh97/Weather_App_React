@@ -10,7 +10,7 @@ export const useWeather = () =>{
 
 export const WeatherProvider = (props) => {
   const [data, setData] = useState(null);
-  const [searchCity, setSearchCity] = useState(null);
+  const [searchCity, setSearchCity] = useState('');
 
   const fetchData = async () => {
     const response = await getWheatherDataByCity(searchCity);
