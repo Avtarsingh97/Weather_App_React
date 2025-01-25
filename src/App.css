@@ -6,9 +6,9 @@
 }
 
 body{
-  background: url(../src/assets/weatherBackgroundImg.png);
+  background: url(../src/assets/weatherBackgroundImg.webp);
   background-size:cover;
   background-position: center;
   height: 100%;
-  width: 100%;
+  
 }
