@@ -7,7 +7,7 @@ import {useWeather} from './Context/Weather'
  
 function App() {
   const weather = useWeather();
-  console.log(weather);
+  
   useEffect(()=>{
     weather.fetchCurrentUserLocation();
   },[]);
