@@ -2,8 +2,12 @@ const baseURL = "https://api.weatherapi.com/v1/current.json?key=aef8405b17404510
 
 
 export const getWheatherDataByCity = async (city) => {
-  const repsonse = await fetch(`${baseURL}&q=${city}&aqi=yes`);
-  return await repsonse.json();
+  try{
+    const repsonse = await fetch(`${baseURL}&q=${city}&aqi=yes`);
+    return await repsonse.json();
+  }catch(e){
+    return e;
+  }
 };
 
 export const getWheatherForLocation = async (lat,lon) => {
