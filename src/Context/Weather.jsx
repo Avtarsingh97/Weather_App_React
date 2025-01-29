@@ -21,10 +21,16 @@ export const WeatherProvider = (props) => {
     navigator.geolocation.getCurrentPosition((position)=>{
       getWheatherForLocation(position.coords.latitude, position.coords.longitude).then((data)=>setData(data));
     })
+  };
+
+  const clearData = () => {
+    setData(null);
+    setSearchCity('');
+    fetchCurrentUserLocation();
   }
 
   return(
-    <WeatherContext.Provider value = {{searchCity, data, setSearchCity, fetchData, fetchCurrentUserLocation}}>
+    <WeatherContext.Provider value = {{searchCity, data, setSearchCity, fetchData, fetchCurrentUserLocation, clearData}}>
       {props.children}
      </WeatherContext.Provider> 
   );
